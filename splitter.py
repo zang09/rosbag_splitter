@@ -50,7 +50,7 @@ def main(args):
 
     split_count = 0
 
-    info_dict = yaml.load(
+    info_dict = yaml.full_load(
         subprocess.Popen(['rosbag', 'info', '--yaml', bagfile], stdout=subprocess.PIPE).communicate()[0])
     bag_duration = info_dict['duration']
     start_time = info_dict['start']
