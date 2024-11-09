@@ -63,6 +63,7 @@ def main(args):
 
     base_name = Path(bagfile).stem
 
+    os.makedirs(out_path, exist_ok=True)
     filename = "{}_{}.bag".format(os.path.join(out_path, base_name), split_count)
     split_count = split_count + 1
 
