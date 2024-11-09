@@ -72,7 +72,7 @@ def main(args):
     for topic, msg, t in rosbag.Bag(bagfile).read_messages():
         if (t.to_sec() - split_start_time) > split_period:
             outbag.close()
-            filename = "{}.{}.bag".format(os.path.join(out_path, base_name), split_count)
+            filename = "{}_{}.bag".format(os.path.join(out_path, base_name), split_count)
             split_count = split_count + 1
             split_start_time = t.to_sec()
             outbag = rosbag.Bag(filename, 'w')
